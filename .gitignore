@@ -3,6 +3,7 @@ DS_Store
 .flaskenv
 *.pyc
 *.pyo
+*.swp
 env/
 env*
 dist/
