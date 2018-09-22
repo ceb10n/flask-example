@@ -1,5 +1,8 @@
+# -*- coding: utf-8 -*- 
+
 import requests
 from urllib.parse import urljoin
+
 
 class APIResource(object):
     """ 
