@@ -1,3 +1,8 @@
 Flask==1.0.2
 requests==2.19.1
 python-digitalocean==1.13.2
+
+#dev
+flake8==3.5.0
+pytest==3.8.1
+black==18.9b0
