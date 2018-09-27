@@ -15,6 +15,13 @@ def droplets():
     return render_template('droplets.html', droplets=droplets)
 
 
+@app.route("/regions")
+def regions():
+    regions = digital_ocean.get_all_regions()
+    
+    return render_template('regions.html', regions=regions)
+
+
 if __name__ == "__main__":
     app.run()
 
