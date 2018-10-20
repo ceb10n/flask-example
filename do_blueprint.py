@@ -1,7 +1,7 @@
 import os
 
 import digitalocean
-from flask import Blueprint, render_template
+from flask import Blueprint, jsonify
 
 do_token = os.environ.get("DO_TOKEN", "")
 digital_ocean = digitalocean.Manager(token=do_token)
@@ -12,11 +12,11 @@ bp = Blueprint("digitalocean", __name__, url_prefix="/digitalocean")
 def regions():
     regions = digital_ocean.get_all_regions()
 
-    return render_template("regions.html", regions=regions)
+    return jsonify(regions), 200
 
 
-@bp.route("/droplets")
+@bp.route("/droplets", methods=("GET",))
 def droplets():
     droplets = digital_ocean.get_all_droplets()
 
-    return render_template("droplets.html", droplets=droplets)
+    return jsonify(droplets), 200
