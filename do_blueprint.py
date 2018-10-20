@@ -1,5 +1,5 @@
 import os
-
+import json
 import digitalocean
 from flask import Blueprint, jsonify
 
@@ -12,11 +12,16 @@ bp = Blueprint("digitalocean", __name__, url_prefix="/digitalocean")
 def regions():
     regions = digital_ocean.get_all_regions()
 
-    return jsonify(regions), 200
+    return jsonify(json.dumps(regions)), 200
 
 
 @bp.route("/droplets", methods=("GET",))
 def droplets():
     droplets = digital_ocean.get_all_droplets()
-
-    return jsonify(droplets), 200
+    data = []
+    for droplet in droplets:
+        data.append({
+            "id": droplet.id,
+            "name": droplet.name,
+            "image": droplet.image})
+    return jsonify(data), 200

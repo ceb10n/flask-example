@@ -13,7 +13,7 @@
     "python.formatting.blackArgs": [
         "--line-length=90"
     ],
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "python.unitTest.pyTestEnabled": true,
     "python.unitTest.pyTestPath": "${workspaceRoot}/.venv/bin/pytest",
 }

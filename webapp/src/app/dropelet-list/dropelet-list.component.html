@@ -5,7 +5,13 @@
 <table>
   <tr *ngFor="let droplet of droplets">
     <td>
-
+      {{ droplet.id }}
+    </td>
+    <td>
+      {{ droplet.name }}
+    </td>
+    <td>
+      {{ droplet.image.name }}
     </td>
   </tr>
 </table>
