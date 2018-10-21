@@ -25,3 +25,14 @@ def droplets():
             "name": droplet.name,
             "image": droplet.image})
     return jsonify(data), 200
+
+
+@bp.route("/droplets/<int:id>")
+def droplet(id):
+    droplet = digital_ocean.get_droplet(id)
+
+    return jsonify({
+        "id": droplet.id,
+        "name": droplet.name,
+        "image_name": droplet.image['name']
+    }), 200

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 
 @Component({
-  selector: 'app-dropelet-list',
-  templateUrl: './dropelet-list.component.html',
-  styleUrls: ['./dropelet-list.component.css']
+  selector: 'app-droplet-list',
+  templateUrl: './droplet-list.component.html',
+  styleUrls: ['./droplet-list.component.css']
 })
-export class DropeletListComponent implements OnInit {
+export class DropletListComponent implements OnInit {
 
   private droplets: Array<object> = [];
   displayedColumns: string[] = ['id', 'name', 'imageName'];

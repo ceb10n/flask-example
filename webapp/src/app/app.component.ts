@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { routingModule } from './app-routing.module'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

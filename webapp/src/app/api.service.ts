@@ -10,6 +10,10 @@ export class ApiService {
   constructor(private httpClient: HttpClient) { }
 
   getDroplets() {
-    return this.httpClient.get(`${this.API_URL}/digitalocean/droplets`)
+    return this.httpClient.get(`${this.API_URL}/digitalocean/droplets`);
+  }
+
+  getDroplet(id) {
+    return this.httpClient.get(`${this.API_URL}/digitalocean/droplets/${id}`);
   }
 }
