@@ -2,16 +2,23 @@
   Droplets
 </h3>
 
-<table>
-  <tr *ngFor="let droplet of droplets">
-    <td>
-      {{ droplet.id }}
-    </td>
-    <td>
-      {{ droplet.name }}
-    </td>
-    <td>
-      {{ droplet.image.name }}
-    </td>
-  </tr>
+<table mat-table [dataSource]="droplets" class="mat-elevation-z8"> 
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let droplet"> {{droplet.id}} </td>
+  </ng-container>
+  
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let droplet"> {{droplet.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="imageName">
+    <th mat-header-cell *matHeaderCellDef> Image Name </th>
+    <td mat-cell *matCellDef="let droplet"> {{droplet.image.name}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
 </table>

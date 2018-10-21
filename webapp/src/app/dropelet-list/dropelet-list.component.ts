@@ -9,6 +9,7 @@ import { ApiService } from '../api.service';
 export class DropeletListComponent implements OnInit {
 
   private droplets: Array<object> = [];
+  displayedColumns: string[] = ['id', 'name', 'imageName'];
 
   constructor(private apiService: ApiService) { }
 
