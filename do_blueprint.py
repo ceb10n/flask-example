@@ -31,8 +31,35 @@ def droplets():
 def droplet(id):
     droplet = digital_ocean.get_droplet(id)
 
-    return jsonify({
-        "id": droplet.id,
-        "name": droplet.name,
-        "image_name": droplet.image['name']
-    }), 200
+    data = {
+        'id': droplet.id,
+        'name': droplet.name,
+        'memory': droplet.memory,
+        'vcpus': droplet.vcpus,
+        'cpu': droplet.disk,
+        'region': droplet.region,
+        'status': droplet.status,
+        'image': droplet.image,
+        'size-slug': droplet.size_slug,
+        'locked': droplet.locked,
+        'created_at': droplet.created_at,
+        'networks': droplet.networks,
+        'kernel': droplet.kernel,
+        'backup_ids': droplet.backup_ids,
+        'snapshop_ids': droplet.snapshot_ids,
+        'action_ids': droplet.action_ids,
+        'features': droplet.features,
+        'ip_address': droplet.ip_address,
+        'private_ip_adress': droplet.private_ip_address,
+        'ip_v6_address': droplet.ip_v6_address,
+        'ssh_keys': droplet.ssh_keys,
+        'backups': droplet.backups,
+        'ipv6': droplet.ipv6,
+        'private_networking': droplet.private_networking,
+        'user_data': droplet.user_data,
+        'volumes': droplet.volumes,
+        'tags': droplet.tags,
+        'monitoring': droplet.monitoring
+    }
+
+    return jsonify(data), 200
